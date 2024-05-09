@@ -53,7 +53,7 @@ export default function HomePage() {
   const fetchExchangeRate = async (source, target, amount) => {
     try {
       const res = await getExchangeRate(source, target, amount);
-      setResultVal(res.data);
+      setResultVal(Number(res.data).toFixed(5));
       setOpen(true);
       setSeverity("success");
       setToastMessage("Exchange Amount received Successfully");
